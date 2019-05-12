@@ -1,0 +1,31 @@
+{
+  "name": "es5-lit-html",
+  "version": "0.0.0",
+  "description": "An ES5 transpiled version of lit-html",
+  "author": "Wes Todd <wes@wesleytodd.com>",
+  "keywords": [
+    "lit-html",
+    "es5",
+    "transpiled"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesleytodd/lit-html-es5.git"
+  },
+  "scripts": {
+    "syncversion": "npm ls lit-html | grep ' lit-html@' | sed -e 's/^.*@//' | xargs npm version",
+    "build": "npm run clean && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lib -d lib && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lit-html.js -d .",
+    "clean": "rm -rf lib lit-html.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build && npm run syncversion",
+    "postpublish": "git push origin && git push origin --tags"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "lit-html": "^1.0.0"
+  }
+}
