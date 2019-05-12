@@ -1,6 +1,6 @@
 {
   "name": "lit-html-es5",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An es5 transpiled version of lit-html",
   "author": "Wes Todd <wes@wesleytodd.com>",
   "keywords": [
