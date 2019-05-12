@@ -1,0 +1,4 @@
+node_modules
+lib
+lit-html.js
+package-lock.json
