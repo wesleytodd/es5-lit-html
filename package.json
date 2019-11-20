@@ -16,8 +16,8 @@
   },
   "scripts": {
     "syncversion": "npm ls lit-html | grep ' lit-html@' | sed -e 's/^.*@//' | xargs npm version",
-    "build": "npm run clean && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lib -d lib && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lit-html.js -d .",
-    "clean": "rm -rf lib lit-html.js",
+    "build": "npm run clean && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lib -d lib && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/lit-html.js -d . && babel --no-babelrc --presets=@babel/preset-env node_modules/lit-html/directives -d directives",
+    "clean": "rm -rf lib directives lit-html.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build && npm run syncversion",
     "postpublish": "git push origin && git push origin --tags"
